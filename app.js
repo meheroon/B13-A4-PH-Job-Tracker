@@ -2,82 +2,82 @@ function getDefaultJobs() {
   return [
     {
       id: "j1",
-      companyName: "Mobile First Corp",
-      position: "React Native Developer",
-      location: "Remote",
+      companyName: "CloudPOS",
+      position: "Junior Frontend Developer",
+      location: "Dhaka (Hybrid)",
       type: "Full-time",
-      salary: "$130,000 - $175,000",
-      description: "Build cross-platform mobile apps using React Native and maintain clean UI components.",
+      salary: "৳25,000 - ৳35,000",
+      description: "Build UI screens from Figma and fix responsive issues for dashboard pages.",
       status: "Applied"
     },
     {
       id: "j2",
+      companyName: "Mobile First Corp",
+      position: "React Native Developer",
+      location: "Remote",
+      type: "Full-time",
+      salary: "$130,000 - $170,000",
+      description: "Build cross-platform mobile apps using React Native and work closely with product team.",
+      status: "Applied"
+    },
+    {
+      id: "j3",
       companyName: "WebFlow Agency",
       position: "Web Designer & Developer",
       location: "Los Angeles, CA",
       type: "Part-time",
       salary: "$80,000 - $120,000",
-      description: "Create responsive landing pages and update client websites based on feedback.",
+      description: "Design landing pages and implement responsive layouts based on client requirements.",
       status: "Applied"
     },
     {
-      id: "j3",
+      id: "j4",
       companyName: "DataViz Solutions",
       position: "Data Visualization Specialist",
       location: "Boston, MA",
       type: "Full-time",
       salary: "$125,000 - $165,000",
-      description: "Transform data into clear dashboards using charts and improve readability for users.",
+      description: "Create interactive dashboards and charts using modern JavaScript visualization tools.",
       status: "Applied"
     },
     {
-      id: "j4",
+      id: "j5",
       companyName: "CloudFirst Inc",
       position: "Backend Developer",
       location: "Seattle, WA",
       type: "Full-time",
       salary: "$140,000 - $190,000",
-      description: "Develop API endpoints, write clean services, and support deployments with basic DevOps tools.",
-      status: "Applied"
-    },
-    {
-      id: "j5",
-      companyName: "Innovation Labs",
-      position: "UI/UX Engineer",
-      location: "Austin, TX",
-      type: "Full-time",
-      salary: "$100,000 - $150,000",
-      description: "Improve usability of product screens, fix UI issues, and keep components consistent.",
+      description: "Develop secure APIs, handle database optimization, and maintain backend services.",
       status: "Applied"
     },
     {
       id: "j6",
+      companyName: "Innovation Labs",
+      position: "UI/UX Engineer",
+      location: "Austin, TX",
+      type: "Full-time",
+      salary: "$110,000 - $150,000",
+      description: "Improve user experience by building clean UI components and doing usability testing.",
+      status: "Applied"
+    },
+    {
+      id: "j7",
       companyName: "MegaCorp Solutions",
       position: "JavaScript Developer",
       location: "New York, NY",
       type: "Full-time",
       salary: "$130,000 - $170,000",
-      description: "Build interactive features with JavaScript and maintain existing code with small refactors.",
+      description: "Work with frontend team to deliver scalable features and fix production UI issues.",
       status: "Applied"
     },
     {
-      id: "j7",
+      id: "j8",
       companyName: "StartupXYZ",
       position: "Full Stack Engineer",
       location: "Remote",
       type: "Full-time",
       salary: "$120,000 - $160,000",
-      description: "Work on both frontend and backend tasks, ship small features weekly, and write basic tests.",
-      status: "Applied"
-    },
-    {
-      id: "j8",
-      companyName: "TechCorp Industries",
-      position: "Senior Frontend Developer",
-      location: "San Francisco, CA",
-      type: "Full-time",
-      salary: "$130,000 - $175,000",
-      description: "Develop scalable UI modules, fix performance issues, and support new feature releases.",
+      description: "Build full stack features, connect APIs, and deploy updates in a fast-paced startup team.",
       status: "Applied"
     }
   ];
