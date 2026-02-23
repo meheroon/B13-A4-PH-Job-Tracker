@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+</head>
+<body class="bg-base-200 min-h-screen">
+  <header class="bg-base-100 border-b">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
+      <h1 class="text-xl md:text-2xl font-bold">PH Job Tracker</h1>
+      <span class="badge badge-outline">Batch 13</span>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-6 space-y-6">
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="card bg-base-100 shadow">
+        <div class="card-body">
+          <p class="text-sm opacity-70">Total Jobs</p>
+          <p id="countTotal" class="text-3xl font-bold">0</p>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow">
+        <div class="card-body">
+          <p class="text-sm opacity-70">Interview</p>
+          <p id="countInterview" class="text-3xl font-bold">0</p>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow">
+        <div class="card-body">
+          <p class="text-sm opacity-70">Rejected</p>
+          <p id="countRejected" class="text-3xl font-bold">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Available Jobs header + count -->
+    <section class="bg-base-100 shadow rounded-2xl p-4 md:p-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg md:text-xl font-bold">Available Jobs</h2>
+        <div class="flex items-center gap-2">
+          <span class="text-sm opacity-70">Jobs:</span>
+          <span id="tabCount" class="badge badge-primary">0</span>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="mt-4">
+        <div class="tabs tabs-bordered">
+          <a id="tabAll" class="tab tab-active" data-tab="all">All</a>
+          <a id="tabInterview" class="tab" data-tab="interview">Interview</a>
+          <a id="tabRejected" class="tab" data-tab="rejected">Rejected</a>
+        </div>
+      </div>
+
+      <!-- Cards area -->
+      <div class="mt-5">
+        <div id="jobsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+        <!-- Empty state -->
+        <div id="emptyState" class="hidden text-center py-10">
+          <img id="emptyImg" src="./assets/jobs.png" alt="No jobs" class="w-24 mx-auto mb-4 opacity-80">
+          <h3 class="text-lg font-bold">No Jobs Available</h3>
+          <p class="text-sm opacity-70 mt-1">
+            Click Interview or Rejected on a job card to move it here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
