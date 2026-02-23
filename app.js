@@ -2,15 +2,84 @@ function getDefaultJobs() {
   return [
     {
       id: "j1",
-      companyName: "CloudPOS",
-      position: "Junior Frontend Developer",
-      location: "Dhaka (Hybrid)",
+      companyName: "Mobile First Corp",
+      position: "React Native Developer",
+      location: "Remote",
       type: "Full-time",
-      salary: "৳25,000 - ৳35,000",
-      description: "Build UI screens from Figma and fix responsive issues for dashboard pages.",
+      salary: "$130,000 - $175,000",
+      description: "Build cross-platform mobile apps using React Native and maintain clean UI components.",
       status: "Applied"
     },
-    
+    {
+      id: "j2",
+      companyName: "WebFlow Agency",
+      position: "Web Designer & Developer",
+      location: "Los Angeles, CA",
+      type: "Part-time",
+      salary: "$80,000 - $120,000",
+      description: "Create responsive landing pages and update client websites based on feedback.",
+      status: "Applied"
+    },
+    {
+      id: "j3",
+      companyName: "DataViz Solutions",
+      position: "Data Visualization Specialist",
+      location: "Boston, MA",
+      type: "Full-time",
+      salary: "$125,000 - $165,000",
+      description: "Transform data into clear dashboards using charts and improve readability for users.",
+      status: "Applied"
+    },
+    {
+      id: "j4",
+      companyName: "CloudFirst Inc",
+      position: "Backend Developer",
+      location: "Seattle, WA",
+      type: "Full-time",
+      salary: "$140,000 - $190,000",
+      description: "Develop API endpoints, write clean services, and support deployments with basic DevOps tools.",
+      status: "Applied"
+    },
+    {
+      id: "j5",
+      companyName: "Innovation Labs",
+      position: "UI/UX Engineer",
+      location: "Austin, TX",
+      type: "Full-time",
+      salary: "$100,000 - $150,000",
+      description: "Improve usability of product screens, fix UI issues, and keep components consistent.",
+      status: "Applied"
+    },
+    {
+      id: "j6",
+      companyName: "MegaCorp Solutions",
+      position: "JavaScript Developer",
+      location: "New York, NY",
+      type: "Full-time",
+      salary: "$130,000 - $170,000",
+      description: "Build interactive features with JavaScript and maintain existing code with small refactors.",
+      status: "Applied"
+    },
+    {
+      id: "j7",
+      companyName: "StartupXYZ",
+      position: "Full Stack Engineer",
+      location: "Remote",
+      type: "Full-time",
+      salary: "$120,000 - $160,000",
+      description: "Work on both frontend and backend tasks, ship small features weekly, and write basic tests.",
+      status: "Applied"
+    },
+    {
+      id: "j8",
+      companyName: "TechCorp Industries",
+      position: "Senior Frontend Developer",
+      location: "San Francisco, CA",
+      type: "Full-time",
+      salary: "$130,000 - $175,000",
+      description: "Develop scalable UI modules, fix performance issues, and support new feature releases.",
+      status: "Applied"
+    }
   ];
 }
 
@@ -25,34 +94,45 @@ function createJobCard(job) {
   const interviewActive = job.status === "Interview";
   const rejectedActive = job.status === "Rejected";
 
+  const statusText = interviewActive
+    ? "INTERVIEW"
+    : rejectedActive
+      ? "REJECTED"
+      : "NOT APPLIED";
+
+  const statusClass = interviewActive
+    ? "badge-success"
+    : rejectedActive
+      ? "badge-error"
+      : "badge-ghost";
+
   return `
-    <div class="card bg-base-100 shadow" data-id="${job.id}">
-      <div class="card-body">
-        <div class="flex items-start justify-between gap-2">
+    <div class="bg-base-100 rounded-xl border border-base-300" data-id="${job.id}">
+      <div class="p-4">
+        <div class="flex items-start justify-between gap-3">
           <div>
-            <h3 class="font-bold text-lg">${job.position}</h3>
-            <p class="text-sm opacity-70">${job.companyName}</p>
+            <h3 class="text-sm font-bold">${job.companyName}</h3>
+            <p class="text-xs opacity-70 mt-0.5">${job.position}</p>
           </div>
-          <button class="btn btn-ghost btn-sm" data-action="delete" title="Delete">
-            ✕
+          <button class="btn btn-ghost btn-xs" data-action="delete" title="Delete">
+            <span class="text-sm">🗑️</span>
           </button>
         </div>
 
-        <div class="mt-2 flex flex-wrap gap-2">
-          <span class="badge badge-outline">${job.location}</span>
-          <span class="badge badge-outline">${job.type}</span>
-          <span class="badge badge-outline">${job.salary}</span>
-        </div>
+        <p class="text-xs opacity-70 mt-2">
+          ${job.location} &nbsp;•&nbsp; ${job.type} &nbsp;•&nbsp; ${job.salary}
+        </p>
 
-        <p class="text-sm mt-3 opacity-80">${job.description}</p>
+        <span class="badge ${statusClass} badge-sm mt-3">${statusText}</span>
 
-        <div class="card-actions mt-4 justify-between">
-          <button class="btn btn-sm ${interviewActive ? "btn-success" : "btn-outline"}"
+        <p class="text-xs opacity-80 mt-3 leading-relaxed">${job.description}</p>
+
+        <div class="mt-4 flex items-center gap-2">
+          <button class="btn btn-xs ${interviewActive ? "btn-success" : "btn-outline btn-success"}"
                   data-action="interview">
             Interview
           </button>
-
-          <button class="btn btn-sm ${rejectedActive ? "btn-error" : "btn-outline"}"
+          <button class="btn btn-xs ${rejectedActive ? "btn-error" : "btn-outline btn-error"}"
                   data-action="rejected">
             Rejected
           </button>
@@ -67,7 +147,7 @@ function renderJobs(jobs, activeTab) {
 
   const filtered = getFilteredJobs(jobs, activeTab);
 
-  document.getElementById("tabCount").innerText = filtered.length;
+  document.getElementById("tabCount").innerText = `${filtered.length} jobs`;
 
   if (filtered.length === 0) {
     grid.innerHTML = "";
